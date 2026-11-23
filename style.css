@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --ink: #172b27;
+  --muted: #687873;
+  --green: #16785d;
+  --green-dark: #105c48;
+  --mint: #e9f5ef;
+  --line: #e5ece8;
+  --surface: #ffffff;
+  --background: #f5f8f6;
+  --shadow: 0 12px 35px rgba(24, 55, 43, .06);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+.site-header {
+  min-height: 76px;
+  padding: 16px max(6%, calc((100% - 1120px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  color: white;
+  background: var(--green);
+}
+.tagline, .note, footer { color: var(--muted); }
+.tagline { margin: 0; font-size: .9rem; }
+.container { width: min(1120px, 88%); margin: 0 auto; }
+.intro { padding: 58px 0 30px; }
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+h1, h2 { font-family: 'Manrope', sans-serif; line-height: 1.2; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.05em; }
+h1 span { color: var(--green); }
+.intro > p:last-child { margin: 12px 0 0; color: var(--muted); }
+.summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.summary-card, .panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.summary-card { padding: 22px 24px; }
+.summary-card p { margin: 0 0 8px; color: var(--muted); font-size: .9rem; }
+.summary-card h2 { margin: 0; font-size: clamp(1.35rem, 3vw, 1.8rem); }
+.budget-card { background: var(--mint); border-color: #d6eade; }
+.balance-card h2 { color: var(--green); }
+.content-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 18px; margin-top: 22px; }
+.panel { padding: 25px; }
+.section-heading { margin-bottom: 20px; }
+.section-heading h2 { margin: 0; font-size: 1.3rem; }
+form { display: flex; flex-direction: column; }
+label { margin: 12px 0 6px; font-size: .88rem; font-weight: 600; }
+input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dce6e0;
+  border-radius: 10px;
+  outline: none;
+  background: #fbfdfb;
+  color: var(--ink);
+  font: inherit;
+}
+input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(22, 120, 93, .12); }
+button {
+  margin-top: 20px;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--green);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover { background: var(--green-dark); }
+button:focus-visible { outline: 3px solid #9bd1bb; outline-offset: 3px; }
+.form-message { min-height: 24px; margin: 10px 0 0; color: var(--green-dark); font-size: .85rem; }
+.expense-list { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+.expense-item strong { display: block; font-size: .93rem; }
+.expense-item small { color: var(--muted); }
+.expense-amount { color: var(--ink); font-weight: 700; white-space: nowrap; }
+.empty-state { padding: 18px 4px; color: var(--muted); font-size: .9rem; }
+.note { margin: 22px 0 35px; font-size: .82rem; }
+footer { padding: 20px; text-align: center; background: var(--surface); border-top: 1px solid var(--line); font-size: .85rem; }
+footer p { margin: 0; }
+@media (max-width: 760px) {
+  .summary-grid { grid-template-columns: 1fr; gap: 12px; }
+  .content-grid { grid-template-columns: 1fr; }
+  .intro { padding-top: 42px; }
+  .site-header { padding-inline: 6%; }
+}
+@media (max-width: 420px) {
+  .tagline { max-width: 125px; text-align: right; font-size: .78rem; }
+  .panel { padding: 19px; }
+}
