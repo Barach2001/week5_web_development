@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SpendWise helps you plan a budget and keep track of expenses.">
+  <title>SpendWise | Personal Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SpendWise home"><span class="brand-mark">S</span> SpendWise</a>
+    <p class="tagline">Make every shilling count.</p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">PERSONAL FINANCE</p>
+      <h1>Your money, <span>made clearer.</span></h1>
+      <p>Set a budget, record your spending, and see what you have left.</p>
+    </section>
+
+    <section class="summary-grid" aria-label="Budget summary">
+      <article class="summary-card budget-card">
+        <p>Monthly budget</p>
+        <h2 id="budgetDisplay">KSh 0.00</h2>
+      </article>
+      <article class="summary-card">
+        <p>Total expenses</p>
+        <h2 id="expensesDisplay">KSh 0.00</h2>
+      </article>
+      <article class="summary-card balance-card">
+        <p>Remaining balance</p>
+        <h2 id="balanceDisplay">KSh 0.00</h2>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">TRACK SPENDING</p><h2>Add an expense</h2></div>
+        </div>
+        <form id="expenseForm">
+          <label for="expenseName">Expense name</label>
+          <input id="expenseName" name="expenseName" type="text" placeholder="e.g. Transport" required maxlength="60">
+          <label for="expenseAmount">Amount (KSh)</label>
+          <input id="expenseAmount" name="expenseAmount" type="number" placeholder="e.g. 250" min="0.01" step="0.01" required>
+          <button type="submit">Add expense</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <article class="panel expenses-panel">
+        <div class="section-heading"><div><p class="eyebrow">YOUR ACTIVITY</p><h2>Recent expenses</h2></div></div>
+        <ul id="expenseList" class="expense-list">
+          <li class="empty-state">No expenses added yet. Your spending will appear here.</li>
+        </ul>
+      </article>
+    </section>
+    <p class="note">Your entries are kept in this page while it remains open. This learning project does not store financial data on a server.</p>
+  </main>
+
+  <footer><p>SpendWise · Budget with confidence</p></footer>
+</body>
+</html>
